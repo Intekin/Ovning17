@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Ovning17.Properties
+namespace NHibernate2.Properties
 {
 
 

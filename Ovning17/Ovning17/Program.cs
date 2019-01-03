@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Ovning17
+namespace NHibernate2
 {
     static class Program
     {
