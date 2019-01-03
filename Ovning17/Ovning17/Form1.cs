@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NHibernate.Tool.hbm2ddl;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,13 +9,33 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Ovning17
+namespace NHibernate2
 {
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    var person = new Person
+                    {
+                        FirstName = textboxFirstName.Text,
+                        LastName = textboxLastName.Text
+                    };
+                    label4.Text = "Person saved to database";
+                    session.Save(person);
+                    transaction.Commit();
+
+                }
+
+            }
         }
     }
 }
