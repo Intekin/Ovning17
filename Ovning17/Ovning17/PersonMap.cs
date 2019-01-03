@@ -15,6 +15,7 @@ namespace NHibernate2
             Id(x => x.Id, m => m.Generator(Generators.GuidComb));
             Property(x => x.FirstName);
             Property(x => x.LastName);
+            // hej :-)
         }
     }
 }
